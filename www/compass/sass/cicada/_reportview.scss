@@ -1,0 +1,258 @@
+.reportview
+{
+	background: #FFF;
+	
+	.dismiss-modal, .back
+	{
+		z-index: 10;
+	}
+	
+	.dismiss-modal
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 40px;
+		height: 40px;
+		background: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		border: none;
+		
+		@include inline-background-image-retina('dismiss-modal.png');
+		
+		&:active
+		{
+			opacity: 0.5;
+		}
+	}
+	
+	.back
+	{
+		position: absolute;
+		top: 0px;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		background: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		border: none;
+		
+		@include inline-background-image-retina('back-arrow.png');
+		
+		html.android &
+		{
+			display: none;
+		}
+		
+		&:active
+		{
+			opacity: 0.5;
+		}
+	}
+	
+	&:not(.surveyendview) .header
+	{
+		padding: 3em 1em;
+	}
+	
+	.header
+	{
+		position: relative;
+		
+		background: #345B57;
+		@include background(linear-gradient(#406F59, #345B57));
+		padding: 1em;
+		color: #fff;
+		text-align: center;
+		@include box-shadow(0 1px 2px rgba(#000, 0.2));
+		
+		&.found
+		{
+			padding: 10em 2em 1em;
+			
+			&.smallscreen
+			{
+				padding: 6em 1em 1em;
+			}
+		}
+		
+		h1
+		{
+			font-size: 22px;
+			font-weight: 100;
+			margin-bottom: 0.3em;
+		}
+		
+		h2
+		{
+			font-size: 14px;
+			font-weight: 300;
+			color: rgba(#fff, 0.6);
+			line-height: 1.4em;
+		}
+	}
+	
+	.canvas
+	{
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+	
+	canvas
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	.divider
+	{
+		background: #f5f5f5;
+		color: #777;
+		text-transform: uppercase;
+		font-size: 12px;
+		text-align: left;
+		padding: 0.4em 15px;
+	}
+	
+	.scroll.view
+	{
+		background: #eee;
+	}
+}
+
+.prev-reports-summary
+{
+	background: #f5f5f5;
+	color: #777;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+	padding: 0.4em 15px;
+}
+
+.recording-warning
+{
+	padding: 0 10px;
+	font-size: 10px;
+	color: #AAA;
+	text-align: center;
+}
+
+.report-details
+{
+	.list-cell
+	{
+		@include display-box();
+		
+		&:first-child
+		{
+			.label
+			{
+				@include border-radius(14px 0 0 0);
+			}
+		}
+		
+		&:last-child
+		{
+			.label
+			{
+				@include border-radius(0 0 0 14px);
+			}
+		}
+		
+		.label
+		{
+			width: 38%;
+			margin: -10px -15px;
+			margin-right: 0;
+			padding: 10px 15px;
+			background: #E3E9E7;
+			font-weight: bold;
+		}
+		
+		.value
+		{
+			@include box-flex(1);
+			margin: -10px -15px;
+			margin-left: 0;
+			padding: 10px 15px;
+		}
+	}
+}
+
+.container-reportview
+{
+	.navbar
+	{
+		display: none;
+	}
+}
+
+.list.reports
+{	
+	&.empty
+	{
+		background: #eee;
+		
+		&:before
+		{
+			content: 'No survey reports yet';
+			padding: 2em;
+			font-size: 12px;
+			color: #666;
+			display: block;
+			text-align: center;
+		}
+	}
+	
+	.list-cell
+	{
+		padding-left: 44px;
+		
+		position: relative;
+		
+		&:before
+		{
+			content: '';
+			background-position: center;
+			background-repeat: no-repeat;
+			@include inline-background-image-retina('upload-status-after-icon.png');
+			width: image-width('upload-status-after-icon.png');
+			position: absolute;
+			left: 9px;
+			top: 0;
+			bottom: 0;
+		}
+		
+		&.not-sent-to-server
+		{
+			&:before
+			{
+				@include inline-background-image-retina('upload-status-before-icon.png');
+			}
+		}
+	}
+	
+	.date
+	{
+		font-size: 14px;
+		font-weight: bold;
+	}
+	
+	.insects
+	{
+		padding-top: 0.5em;
+		padding-bottom: 0.25em;
+		font-size: 12px;
+		color: #aaa;
+		
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}

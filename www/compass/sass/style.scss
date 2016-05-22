@@ -1,0 +1,35 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+*
+{
+	@include box-sizing(border-box);
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Prevent the highlight colour from appearing
+// Especially useful on Jelly Bean where any click listeners cause this to be applied
+*
+{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-user-select: none;
+}
+
+body, html
+{
+	font-family: 'helvetica neue', 'helvetica', 'arial', sans-serif;
+	
+	width: 100%;
+	height: 100%;
+	
+	display: box;
+	display: -webkit-box;
+}
+
+@import "cicada/app";

@@ -1,0 +1,13 @@
+.view
+{
+	display: box;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	
+	&.stretch-y
+	{
+		-webkit-box-orient: vertical;
+		-webkit-box-align: stretch; // Make this adjustable from the params,
+		-webkit-box-flex: 1;
+	}
+}

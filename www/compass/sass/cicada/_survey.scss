@@ -1,0 +1,41 @@
+.view.survey
+{
+	background: #406D59;
+	@include background(linear-gradient(288deg, #738C66 -10%, #406D59 50%, #122136 110%));
+	
+	> div:first-child
+	{
+		position: relative;
+	}
+	
+	.title
+	{
+		color: #fff;
+		font-size: 22px;
+		font-weight: 100;
+		text-align: center;
+		padding: 22px 0 0.5em;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		
+		
+		&.countdown
+		{
+			font-size: 22px;
+		}
+	}
+	
+	.canvas
+	{
+		position: relative;
+		
+		canvas
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}

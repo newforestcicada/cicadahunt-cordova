@@ -1,0 +1,80 @@
+@import "retina";
+
+// Core Views
+@import "view";
+@import "tabbar";
+@import "navview";
+@import "scrollview";
+@import "listview";
+@import "transitions";
+
+// App specific styling
+@import "infoview";
+@import "survey";
+@import "reportview";
+@import "surveyendview";
+@import "htmlview";
+@import "insectnotifications";
+@import "sonogram";
+@import "loadingview";
+
+.app
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+	position: relative;
+	
+	> .view, .modal
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.modal
+{	
+	display: box;
+	display: -webkit-box;
+}
+
+.icon
+{
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: -10000em;
+	overflow: hidden;
+}
+
+.insect.icon
+{
+	pointer-events: none;
+	@include background-size(contain);
+	background-image: inline-image('insect-icon@2x.png');
+	position: relative;
+	//z-index: 100;
+	//height: 0;
+	//padding-bottom: (image-width('insect-icon@2x.png') / image-height('insect-icon@2x.png')) * 100%;
+}
+
+button.button
+{
+	@include background(linear-gradient(#eee, #ddd));
+	border: 1px solid rgba(#000, 0.35);
+	@include box-shadow(0 1px 0 rgba(#fff, 0.9) inset);
+	color: #111;
+	text-shadow: 0 1px 0 rgba(#fff, 0.9);
+	font-size: 14px;
+	padding: 0.6em;
+	@include border-radius(5px);
+	
+	&:active, &.active
+	{
+		@include background(linear-gradient(#ddd, #ccc));
+	}
+}

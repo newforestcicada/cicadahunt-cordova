@@ -1,0 +1,28 @@
+<body>
+
+<p>This app is being developed as part of a research project at the University of Southampton to help in the hunt for the New Forest cicada.</p>
+
+<h3>How does it work?</h3>
+
+<p>The app uses the microphone of your smartphone (the same one you use for phone calls) to capture the sound in the surrounding environment. This sound is analysed on the phone itself to provide you with immediate feedback on whether the cicada is there or not. In both cases, if you complete a survey (by tapping on the cicada image in the detector page), the app will send a report to the project team with location and time of the survey, and the result of the cicada detection. If the app has detected an insect call that is similar to a cicada, it will also prompt you to upload a recording so that it can be analysed in more detail.</p>
+
+<h3>I want to know more</h3>
+
+<p>OK. The technical bits. There are two algorithms that are used to detect the presence of the cicada. The first one is a simple method based only on the frequency of the call. This runs two Goertzel filters, one at 14kHz and one at 8kHz and takes the ratio of the two. The high filter is centred where the cicada call is stronger; the low filter is centred on a frequency range where there shouldn't be any cicada or background noise. Therefore, the ratio will be high when the cicada is singing, and low when it's not. This is used to make the cicada icon on the detector page glow orange in response to hearing a cicada sing.</p>
+
+<p>This method is simple and quite robust, but does not take advantage of all of the information in the sound. Our second algorithm is used once a survey has been completed. It uses a more sophisticated approach to check that we really were detecting a cicada. To do so, we use a hidden Markov model (as is often used in speech recognition) to represent the frequencies and song patterns of a number of different insects (specifically, the dark bush-cricket, Roesel's bush-cricket, wood cricket, and the common field grasshopper) that could be mistaken for the cicada's song. We train this model offline, so that the computation required on device is reduced to a minimum. If you would like to know more about the method, visit the <a href="http://newforestcicada.info/publications/">publications page</a> on our website, where you can find a paper explaining the approach in detail. You can also find more details of these other insects on the website of our project partner <a href="http://www.buglife.org.uk">Buglife</a>.</p>
+
+<h3>What data is collected?</h3>
+
+<p>When you perform a survey with the app, we collect some data. This is exactly what we collect:</p>
+
+<ul>
+<li>the date and time,</li>
+<li>your location (from the phone's GPS),</li>
+<li>the make and model of your phone,</li>
+<li>a unique Device ID that the app assigns to your phone,</li>
+<li>a sound recording of the survey, if we think we need to analyse it further or if it's a positive cicada detection.</li>
+</ul>
+
+<p>All this is collected anonymously – we do not store any personal information. However, if you would like to manage your survey reports online, you can register and login onto our website, and then use the Device ID (visible under the "Device ID" item on the previous menu) to associate survey reports to your login. You can delete your survey reports at any time by simply emailing us at <a href="&#x6D;&#97;&#105;&#x6C;&#116;&#x6F;:i&#x6E;&#102;&#x6F;&#x40;&#110;&#101;&#119;&#x66;&#111;&#114;&#x65;&#115;&#x74;&#x63;&#x69;&#x63;&#97;&#100;&#x61;&#x2E;&#x69;&#110;&#x66;o">i&#x6E;&#102;&#x6F;&#x40;&#110;&#101;&#119;&#x66;&#111;&#114;&#x65;&#115;&#x74;&#x63;&#x69;&#x63;&#97;&#100;&#x61;&#x2E;&#x69;&#110;&#x66;o</a> quoting your Device ID.</p>
+</body>

@@ -1,0 +1,95 @@
+@-webkit-keyframes grow
+{
+	0%
+	{
+		-webkit-transform: scale(1);
+	}
+	
+	50%
+	{
+		-webkit-transform: scale(1.2);
+	}
+	
+	100%
+	{
+		-webkit-transform: scale(1);
+	}
+}
+
+.loadingview
+{
+	-webkit-transition: opacity 0.2s linear;
+	
+	.overlay
+	{
+		opacity: 0;
+		background: rgba(#FFF, 0.8);
+		-webkit-transition: opacity 0.3s linear;
+	}
+	
+	.spinner
+	{
+		$spinner-size: 100px;
+		@include border-radius(10px);
+		width: $spinner-size;
+		height: $spinner-size;
+		margin: 20% auto 0;
+		@include background(inline-image('loading.gif') no-repeat center, linear-gradient(rgba(#333, 1), rgba(#000, 1)));
+		@include background-size(image-width('loading.gif')/2, auto);
+		position: relative;
+		color: #fff;
+		
+		&::before
+		{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: $spinner-size;
+			height: $spinner-size;
+			text-align: center;
+			line-height: $spinner-size;
+			color: #fff;
+			font-size: 50px;
+		}
+		
+		&.grow
+		{
+			-webkit-animation: grow 400ms ease;
+		}
+		
+		&.success
+		{
+			-webkit-animation: grow 400ms ease;
+			
+			@include background(linear-gradient(rgba(adjust-lightness(green, 10), 1), rgba(green, 1)));
+			
+			&::before
+			{
+				content: '✓';
+			}
+			
+		}
+		
+		&.failure
+		{
+			-webkit-animation: grow 400ms ease;
+			
+			@include background(linear-gradient(rgba(adjust-lightness(red, 10), 1), rgba(red, 1)));
+			
+			&::before
+			{
+				content: '✘';
+			}
+			
+		}
+	}
+	
+	.label
+	{
+		width: 300px;
+		max-width: 80%;
+		text-align: center;
+		font-weight: bold;
+		margin: 1em auto;
+	}
+}

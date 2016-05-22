@@ -1,0 +1,138 @@
+.html.view
+{
+	.content
+	{
+		font-size: 14px;
+		padding: 1em;
+		
+		a
+		{
+			color: #345B57;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		h1, h2, h3, h4, h5
+		{
+			font-weight: bold;
+			margin: 1.2em 0;
+		}
+		
+		h1
+		{
+			font-size: 2em;
+			
+			&:first-child
+			{
+				margin-top: 0;
+			}
+		}
+		
+		h2
+		{
+			font-size: 1.4em;
+		}
+
+		h3
+		{
+			font-size: 1.1em;
+		}
+		
+		
+		p
+		{
+			margin: 0.8em 0;
+			line-height: 1.5em;
+			color: #666;
+		}
+		
+		em
+		{
+			font-style: italic;
+		}
+		
+		strong
+		{
+			font-weight: bold;
+			color: #333;
+		}
+		
+		ul, ol
+		{
+			margin: 0.8em 0;
+			padding-left: 3em;
+			color: #666;
+			line-height: 1.5em;
+		}
+		
+		ul
+		{
+			list-style: disc;
+		}
+		
+		ol
+		{
+			list-style: decimal;
+		}
+		
+		blockquote
+		{
+			margin: 0.8em 0;
+			padding-left: 3em;
+			font-family: serif;
+			font-style: italic;
+			font-size: 1.15em;
+			
+			p
+			{
+				color: #406f59;
+			}
+			
+			p:first-child
+			{
+				margin-top: 0;
+			}
+			
+			p:last-child
+			{
+				margin-bottom: 0;
+			}
+		}
+		
+		img
+		{
+			max-width: 100%;
+		}
+		
+		.video-container
+		{
+			position: relative;
+			height: 0;
+			padding-bottom: (3/4)*100%;
+			background: #000;
+			
+			.play
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: image-width('play-icon.png');
+				height: image-height('play-icon.png');
+				background: transparent;
+				border: 0;
+				margin: 0 auto;
+				@include inline-background-image-retina('play-icon.png');
+			}
+			
+			video
+			{
+				float: left;
+				//position: absolute;
+				margin-left: 150%;
+
+			}
+		}
+	}
+}
