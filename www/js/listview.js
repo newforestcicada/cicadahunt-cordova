@@ -67,8 +67,12 @@ define(['view'], function() {
 					moved = true;
 					target.removeClass('selected');
 					
-					_this.elem.undelegate('.list-cell', 'touchmove', move);
-					_this.elem.undelegate('.list-cell', 'touchend', end);
+					setTimeout(function() {
+						//console.log("touch move");
+						_this.elem.undelegate('.list-cell', 'touchmove', move);
+						_this.elem.undelegate('.list-cell', 'touchend', end);
+					}, 100);
+					
 				};
 				
 				var end = function(event) {
@@ -79,7 +83,7 @@ define(['view'], function() {
 					
 					setTimeout(function() {
 						_this.rowSelected(index, group);
-					}, 100);
+					}, 10);
 				};
 				
 				_this.elem.delegate('.list-cell', 'touchmove', move);

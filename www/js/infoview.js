@@ -55,7 +55,7 @@ define(['listview', 'htmlview'], function() {
 				        },
 					{
 						title: 'Version',
-						sub: device.platform == "Android" ? "1.1v9" : "1.1"
+						sub: device.platform == "Android" ? "2.0a1" : "1.1"
 					}
 				]
 			}

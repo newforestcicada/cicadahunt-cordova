@@ -172,7 +172,7 @@ define(['visualisationview', 'surveyendview', 'insectnotificationview', 'loading
 			}
 
 			var callBack = function(button) {
-				if ( button == 2 ) {
+				if ( button == 1 ) {
 					_this.startSurvey();
 				}
 			}

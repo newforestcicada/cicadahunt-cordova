@@ -89,6 +89,10 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 			var _this = this;
 			
 			this.elem.delegate('.buttons button', 'touchstart', function() {
+				
+				console.log("Touch START nothing detected");
+				console.log("this: "+JSON.stringify($(this)));
+				
 				var target = $(this).addClass('active');
 				
 				_this.elem.delegate('.buttons button', 'touchmove', function() {
@@ -99,9 +103,14 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 			});
 			
 			this.elem.delegate('.buttons button', 'touchend', function() {
-				if(!$(this).is('.active'))
-					return;
-
+				
+				console.log("Touch END nothing detected");
+				console.log("this: "+JSON.stringify($(this)));
+				
+				//if(!$(this).is('.active')) {
+				//	console.log("Not bloody active");
+				//	return;
+				//}
 				_this.getParentView().getParentView().saveAndSubmitReport();
 			});
 		},
@@ -137,6 +146,10 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 			var _this = this;
 			
 			this.elem.delegate('.buttons button', 'touchstart', function() {
+				
+				console.log("Touch START cicada detected");
+				console.log("this: "+JSON.stringify($(this)));
+				
 				var target = $(this).addClass('active');
 				
 				_this.elem.delegate('.buttons button', 'touchmove', function() {
@@ -148,10 +161,17 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 			this.elem.delegate('.buttons button', 'touchend', function() {
 				var data = window.app.data.getReportWithId(_this.getParentView().getParentView().data().id);
 				
-				if(!$(this).is('.active'))
-					return;
+				console.log("Touch end cicada detected");
+				console.log("data: "+JSON.stringify(data));
+				console.log("this: "+JSON.stringify($(this)));
+				
+				//if(!$(this).is('.active')) {
+				//	console.log("Not bloody active");
+				//	return;
+				//}
 
 				var callBack = function(button) {
+					console.log("pressed button "+button);
 					if (button==1) {
 						data.keep_recording = false;
 						_this.getParentView().getParentView().saveAndSubmitReport();
@@ -201,7 +221,7 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 			this.elem.delegate('ul.insects li', 'touchstart', function(event) {
 				var target = $(event.target).closest('ul.insects li');
 				
-				if(target.data('id') == undefined)
+				if(target.data('id') === undefined)
 					return;
 				
 				target.addClass('pressed');
@@ -237,8 +257,10 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 				var data = window.app.data.getReportWithId(_this.data().id),
 					selectedInsectId = _this.elem.find('li.selected').data('id');
 				
-				if(!$(this).is('.active'))
-					return;
+				//if(!$(this).is('.active')){
+				//	console.log("Not bloody active");
+				//	return;
+				//}
 				
 				$(this).removeClass('active');
 				
@@ -289,7 +311,7 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 						if(loaded >= images.length) {
 							_this.getParentView().refresh();
 						}
-					}
+					};
 					
 					image.src = $(img).attr('src');
 				});

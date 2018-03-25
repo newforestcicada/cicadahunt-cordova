@@ -20,11 +20,31 @@ define(['view', 'scrollview', 'reportheaderview', 'sonogram'], function() {
 					// Ensure the callback is async
 					setTimeout(function() {
 						loaded();
-					}, 10)
+					}, 10);
 			    };
 			
-				console.log('FileReader.readAsDataURL('+imgPath+')');
-			    reader.readAsDataURL(imgPath);
+				window.resolveLocalFileSystemURL("file://"+imgPath,
+					// success callback; generates the FileEntry object needed to convert to Base64 string
+					function (fileEntry) {
+						// convert to Base64 string
+						var win = function (file) {
+							reader.readAsDataURL(file);
+						};
+						var fail = function (evt) {
+							console.log("error: "+evt);
+						};
+						fileEntry.file(win, fail);
+					},
+					// error callback
+					function (e) {
+						console.log("error: ");
+						console.log(e);
+					}
+				);
+				
+				
+				
+				
 			}
 			else {
 				this.imgSrc = imgPath;

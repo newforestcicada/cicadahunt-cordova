@@ -38,7 +38,7 @@ define(['view'], function() {
 			if(this.scroller)
 				this.scroller.destroy();
 				
-			this.scroller = new iScroll(this.wrapper.get(0), {
+			this.scroller = new IScroll(this.wrapper.get(0), {
 				hScroll: false,
 				// useTransform: false,
 				// onBeforeScrollStart: function (e) {

@@ -1,0 +1,19 @@
+{
+  "name": "info.newforestcicada.hunt",
+  "version": "0.0.1",
+  "displayName": "Cicada Hunt",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-compat": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "^6.4.0",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-whitelist": "1"
+  }
+}
