@@ -1,12 +1,9 @@
-platforms/android
-platforms/ios
 plugins/cordova-*
-
 
 info.txt
 
 node_modules/*
-platforms/*
+
 package-lock.json
 
 plugins/ios.json
