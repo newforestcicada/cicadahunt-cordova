@@ -2,3 +2,8 @@ platforms/android
 platforms/ios
 plugins/cordova-*
 
+
+info.txt
+
+node_modules/*
+platforms/*
