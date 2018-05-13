@@ -1,3 +1,5 @@
+platforms/browser
+
 plugins/cordova-*
 
 info.txt
@@ -9,11 +11,5 @@ package-lock.json
 plugins/ios.json
 
 plugins/browser.json
-
-plugins/fetch.json
-
-plugins/fetch.json
-
-plugins/fetch.json
 
 plugins/fetch.json
