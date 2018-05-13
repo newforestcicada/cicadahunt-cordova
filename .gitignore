@@ -7,3 +7,14 @@ info.txt
 
 node_modules/*
 platforms/*
+package-lock.json
+
+plugins/ios.json
+
+plugins/browser.json
+
+plugins/fetch.json
+
+plugins/fetch.json
+
+plugins/fetch.json
